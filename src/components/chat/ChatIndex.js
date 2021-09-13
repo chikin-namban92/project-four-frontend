@@ -1,5 +1,7 @@
 import React from 'react'
 import { getAllChats } from '../../lib/api'
+import Error from '../common/Error'
+import Loading from '../common/Loading'
 import ChatCard from './ChatCard'
 
 
@@ -21,12 +23,12 @@ function ChatIndex() {
     
   }, [])
 
-
-  console.log(chats)
   return (
     <>
       <section className="section">
         <div className="container">
+          {isError && <Error />}
+          {isLoading && <Loading />}
           {chats && chats.map(chat => (
             <ChatCard key={chat.id} chat={chat} />
           ))}

@@ -6,6 +6,7 @@ import ChatIndex from './components/chat/ChatIndex'
 import ChatShow from './components/chat/ChatShow'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+import SecureRoute from './components/common/secureRoute'
 
 function App() {
   return (
@@ -15,12 +16,12 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/chat/:chatId">
+        <SecureRoute path="/chat/:chatId">
           <ChatShow />
-        </Route>
-        <Route path="/chat">
+        </SecureRoute>
+        <SecureRoute path="/chat">
           <ChatIndex />
-        </Route>
+        </SecureRoute>
         <Route path="/auth/login">
           <Login />
         </Route>
