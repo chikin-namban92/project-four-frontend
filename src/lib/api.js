@@ -1,10 +1,18 @@
 import axios from 'axios'
+import { getToken } from './auth'
 
-// function headers() {
-//   return {
-//     headers: { authorization: `Bearer ` },
-//   }
-// }
+function headers() {
+  return {
+    headers: { authorization: `Bearer ${getToken()}` },
+  }
+}
+
+// * Chat & Message Requests
+
+export function getAllChats() {
+  return axios.get('/api/chat/', headers())
+}
+
 
 // * Auth Requests
 

@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
+import { isAuthenticated, removeToken } from '../../lib/auth'
 
 function Navbar() {
   const history = useHistory()
   const { pathname } = useLocation()
   const [isOpen, setIsOpen] = React.useState(false)
+  const isAuth = isAuthenticated()
 
   const handleToggle = () => {
     setIsOpen(!isOpen)
@@ -13,6 +15,11 @@ function Navbar() {
   React.useEffect(() => {
     setIsOpen(false)
   }, [pathname])
+
+  const handleLogout = () => {
+    removeToken()
+    history.push('/')
+  }
 
   return (
     <nav className="navbar is-dark">
@@ -37,12 +44,25 @@ function Navbar() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <Link to="/auth/login" className="button is-danger">
+                {!isAuth && (
+                  <>
+                    <Link to="/auth/login" className="button is-danger">
                   Login
-                </Link>
-                <Link to="/auth/register" className="button is-danger">
+                    </Link>
+                    <Link to="/auth/register" className="button is-danger">
                   Register
-                </Link>
+                    </Link>
+                  </>
+                )}
+                {isAuth && (
+                  <>
+                    <Link to="/chat" className="button is-danger">
+                    😻
+                    </Link><button className="button is-danger" onClick={handleLogout}>
+                      Log Out
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>
