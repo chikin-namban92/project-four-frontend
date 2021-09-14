@@ -1,11 +1,20 @@
 import { MessageBox } from 'react-chat-elements'
+import { isOwner } from '../../lib/auth'
 
 function MessagesList({ message }) {
+
+  const boxPosition = () => {
+    if (isOwner(message.sender)) {
+      return 'right'
+    } else {
+      return 'left'
+    }
+  }
 
 
   return (
     <MessageBox 
-      position={'left'}
+      position={boxPosition()}
       type={'text'}
       text={message.text}
       data={{

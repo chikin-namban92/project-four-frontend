@@ -17,6 +17,10 @@ export function getAllMessages() {
   return axios.get('/api/chat/message', headers())
 }
 
+export function sendMessage(chatId, formData) {
+  return axios.post(`/api/chat/${chatId}/message/`, formData, headers())
+}
+
 
 // * Auth Requests
 

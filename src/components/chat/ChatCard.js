@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import { ChatItem } from 'react-chat-elements'
+import { isOwner } from '../../lib/auth'
 
 function ChatCard({ chat }) {
   const history = useHistory()
@@ -9,14 +10,30 @@ function ChatCard({ chat }) {
     history.push(`/chat/${chat.id}`)
   }
 
+  const isLoggedInUser = () => {
+    if (isOwner(chat.matchedUsers[0].id)) {
+      return chat.matchedUsers[1].username
+    } else {
+      return chat.matchedUsers[0].username
+    }
+  }
+
+  const matchedUserAvatar = () => {
+    if (isOwner(chat.matchedUsers[0].id)) {
+      return chat.matchedUsers[1].image
+    } else {
+      return chat.matchedUsers[0].image
+    }
+  }
+
   return (
     <ChatItem 
-      avatar={'https://m.media-amazon.com/images/I/61yOiGcmpWL._AC_SL1500_.jpg'}
+      avatar={matchedUserAvatar()}
       alt={chat.id}
-      title={chat.matchedUsers[1].username}
+      title={isLoggedInUser()}
       subtitle={chat.messagesInChat[chat.messagesInChat.length - 1].text}
       date={new Date()}
-      unread={0}
+      unread={1}
       onClick={handleClick}
     />
   )
