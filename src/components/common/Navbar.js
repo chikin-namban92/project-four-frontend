@@ -58,7 +58,8 @@ function Navbar() {
                   <>
                     <Link to="/chat" className="button is-danger">
                     😻
-                    </Link><button className="button is-danger" onClick={handleLogout}>
+                    </Link>
+                    <button className="button is-danger" onClick={handleLogout}>
                       Log Out
                     </button>
                   </>

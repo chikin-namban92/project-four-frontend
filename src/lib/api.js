@@ -13,6 +13,10 @@ export function getAllChats() {
   return axios.get('/api/chat/', headers())
 }
 
+export function getAllMessages() {
+  return axios.get('/api/chat/message', headers())
+}
+
 
 // * Auth Requests
 
