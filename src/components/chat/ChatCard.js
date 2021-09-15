@@ -26,12 +26,6 @@ function ChatCard({ chat }) {
     }
   }
 
-  // const isNewChat = () => {
-  //   if (chat.messagesInChat[length] >= 0) {
-  //     return false
-  //   }
-  //   return true
-  // }
 
   const textDisplay = () => {
     if (!chat.messagesInChat[0]) {

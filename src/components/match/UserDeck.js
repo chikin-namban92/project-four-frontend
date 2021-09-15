@@ -1,5 +1,4 @@
 import { likeUser } from '../../lib/api'
-import { isAuthenticated } from '../../lib/auth'
 
 function UserDeck({ user }) {
 
@@ -16,7 +15,6 @@ function UserDeck({ user }) {
     const likedUserId = e.target.parentElement.id
     console.log(likedUserId)
     try {
-      // if (!isAuthenticated()) throw new Error
       const like = await likeUser(likedUserId)
       console.log(like)
     } catch (err) {
@@ -26,14 +24,14 @@ function UserDeck({ user }) {
 
   return (
     <>
-      <div className="column is-one-quarter-desktop is-one-third-tablet">
+      <div className="column is-three-fifths is-offset-one-fifth">
         <div className="card">
           <div className="card-header">
             <div className="card-header-title">{user.username}</div>
           </div>
           <div className="card-content">
             <div className="card-image">
-              <figure className="image is-128x128">
+              <figure className="image is-200x200">
                 <img className="is-rounded" src={user.image} alt={user.username}/>
               </figure>
             </div>
