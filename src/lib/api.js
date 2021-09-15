@@ -13,6 +13,10 @@ export function getAllUsers() {
   return axios.get('/api/auth/profile/', headers())
 }
 
+export function likeUser(likedUserId, userId) {
+  return axios.post(`/api/auth/${likedUserId}/like/`, userId, headers())
+}
+
 // * Chat & Message Requests
 
 export function getAllChats() {

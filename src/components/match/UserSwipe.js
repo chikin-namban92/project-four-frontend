@@ -2,6 +2,7 @@ import React from 'react'
 import { getAllUsers } from '../../lib/api'
 import Error from '../common/Error'
 import Loading from '../common/Loading'
+import UserDeck from './UserDeck'
 
 function UserSwipe() {
   const [users, setUsers] = React.useState([])
@@ -30,7 +31,7 @@ function UserSwipe() {
           {isError && <Error />}
           {isLoading && <Loading />}
           {users && users.map(user => (
-            <h1 key={user.id}>{user.username}</h1>
+            <UserDeck key={user.id} user={user} />
           ))}
         </div>
       </section>

@@ -26,12 +26,27 @@ function ChatCard({ chat }) {
     }
   }
 
+  // const isNewChat = () => {
+  //   if (chat.messagesInChat[length] >= 0) {
+  //     return false
+  //   }
+  //   return true
+  // }
+
+  const textDisplay = () => {
+    if (!chat.messagesInChat[0]) {
+      return `Start your conversation with ${isLoggedInUser()}`
+    } else if (chat.messagesInChat[chat.messagesInChat.length - 1].text) {
+      return chat.messagesInChat[chat.messagesInChat.length - 1].text
+    }
+  }
+
   return (
     <ChatItem 
       avatar={matchedUserAvatar()}
       alt={chat.id}
       title={isLoggedInUser()}
-      subtitle={chat.messagesInChat[chat.messagesInChat.length - 1].text}
+      subtitle={textDisplay()}
       date={new Date()}
       unread={1}
       onClick={handleClick}
