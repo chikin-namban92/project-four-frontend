@@ -7,6 +7,7 @@ import ChatShow from './components/chat/ChatShow'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/secureRoute'
+import UserSwipe from './components/match/UserSwipe'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </SecureRoute>
         <SecureRoute path="/chat">
           <ChatIndex />
+        </SecureRoute>
+        <SecureRoute path="/users">
+          <UserSwipe />
         </SecureRoute>
         <Route path="/auth/login">
           <Login />

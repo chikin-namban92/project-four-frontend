@@ -13,7 +13,6 @@ function ChatShow() {
   const [messages, setMessages] = React.useState([])
   const [isError, setIsError] = React.useState(false)
   const [formData, setFormData] = React.useState(initialState)
-  const [formErrors, setFormErrors] = React.useState(initialState)
 
   const isLoading = !messages && !isError
   const currentChat = useParams()

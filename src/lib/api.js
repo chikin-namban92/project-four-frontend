@@ -7,6 +7,12 @@ function headers() {
   }
 }
 
+// * User Requests
+
+export function getAllUsers() {
+  return axios.get('/api/auth/profile/', headers())
+}
+
 // * Chat & Message Requests
 
 export function getAllChats() {
