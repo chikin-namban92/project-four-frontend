@@ -59,7 +59,7 @@ function ChatShow() {
 
   return (
     <>
-      <section className="section">
+      <section className="section has-scroll">
         <div className="container">
           {isError && <Error />}
           {isLoading && <Loading />}
