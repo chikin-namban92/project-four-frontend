@@ -17,6 +17,7 @@ function ChatShow() {
   const isLoading = !messages && !isError
   const currentChat = useParams()
   const history = useHistory()
+  
 
   React.useEffect(() => {
     const getData = async () => {
@@ -29,6 +30,9 @@ function ChatShow() {
     }
     getData()
   }, [])
+
+  
+
 
   // console.log(Number(currentChat.chatId))
 
@@ -57,6 +61,17 @@ function ChatShow() {
     }
   }
 
+  const handleLoad = async () => {
+    try {
+      const scrollBox = await document.getElementById('message-box')
+      scrollBox.scrollIntoView({ block: 'end' })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  handleLoad()
+
   return (
     <>
       <section className="section has-scroll">
@@ -66,8 +81,9 @@ function ChatShow() {
           {messages && messages.map(message => (
             Number(message.parentChat) === Number(currentChat.chatId) ? 
               <MessagesList key={message.id} message={message} /> : 
-              <h1></h1>
+              <h1></h1>    
           ))}
+          <div id="message-box"></div>
         </div>
       </section>
       <section className="section">
