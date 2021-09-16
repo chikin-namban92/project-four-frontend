@@ -1,5 +1,6 @@
 import React from 'react'
 import { getAllUsers } from '../../lib/api'
+// import { isOwner } from '../../lib/auth'
 import Error from '../common/Error'
 import Loading from '../common/Loading'
 import UserDeck from './UserDeck'
@@ -22,7 +23,7 @@ function UserSwipe() {
     
   }, [])
 
-  console.log(users)
+  
 
   return (
     <>

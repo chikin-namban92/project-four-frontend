@@ -2,13 +2,32 @@ import { likeUser } from '../../lib/api'
 
 function UserDeck({ user }) {
 
+  const isAdmin = () => {
+    if (user.username === 'admin') {
+      return
+    } 
+    return user
+  }
+
+  // const isLiked = () => {
+  //   if (user.likedBy.map(likedByUser => {
+  //     if (isOwner(likedByUser)) {
+  //       return
+  //     }
+  //   })) {
+  //     return user
+  //   }
+  // }
+
   const displayCatnipPreference = () => {
     if (user.catnip === true) return '✅'
     return '❌'
   }
 
   const handleDislike = (e) => {
-    e.target.user.remove()
+    // e.target.parentElement.parentElement.remove()
+    console.log(e.target.parentElement.parentElement)
+    return true
   }
 
   const handleLike = async (e) => {
@@ -17,13 +36,15 @@ function UserDeck({ user }) {
     try {
       const like = await likeUser(likedUserId)
       console.log(like)
+      // e.target.parentElement.parentElement.remove()
+      return true
     } catch (err) {
       console.log(err)
     }
   }
 
   return (
-    <>
+    <>{isAdmin() && (
       <div className="column is-three-fifths is-offset-one-fifth">
         <div className="card">
           <div className="card-header">
@@ -50,6 +71,7 @@ function UserDeck({ user }) {
           </footer>
         </div>
       </div>
+    )}
     </>
   )
 }

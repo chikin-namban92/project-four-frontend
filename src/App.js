@@ -4,6 +4,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import ChatIndex from './components/chat/ChatIndex'
 import ChatShow from './components/chat/ChatShow'
+import Footer from './components/common/Footer'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/secureRoute'
@@ -33,6 +34,7 @@ function App() {
           <Register />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }

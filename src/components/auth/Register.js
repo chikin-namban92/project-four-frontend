@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 import { registerUser } from '../../lib/api'
+import ImageUploadField from './ImageUpload'
 
 const initialState = {
   username: '',
@@ -23,6 +24,10 @@ function Register() {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
     setFormData({ ...formData, [e.target.name]: value })
     setFormErrors({ ...formErrors, [e.target.name]: '' })
+  }
+
+  const handleImageUpload = (imageUrl, image) => {
+    setFormData({ ...formData, [image]: imageUrl })
   }
 
   const handleSubmit = async (e) => {
@@ -73,6 +78,14 @@ function Register() {
               {formErrors.email && (
                 <p className="help is-danger">{formErrors.email}</p>
               )}
+            </div>
+            <div className="field">
+              <ImageUploadField
+                onChange={handleImageUpload}
+                labelText="Upload a Profile Picture"
+                name="image"
+                value={formData.image}
+              />
             </div>
             <div className="field">
               <label className="label">Password</label>
@@ -138,6 +151,21 @@ function Register() {
               </div>
               {formErrors.location && (
                 <p className="help is-danger">{formErrors.location}</p>
+              )}
+            </div>
+            <div className="field">
+              <label className="label">Interests</label>
+              <div className="control">
+                <input 
+                  className={`input ${formErrors.interests ? 'isdanger' : ''}`}
+                  placeholder="Interests"
+                  onChange={handleChange}
+                  name="interests"
+                  value={formData.interests}
+                />
+              </div>
+              {formErrors.interests && (
+                <p className="help is-danger">{formErrors.interests}</p>
               )}
             </div>
             <div className="field">

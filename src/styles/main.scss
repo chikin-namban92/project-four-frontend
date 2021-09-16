@@ -21,3 +21,16 @@
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+footer {
+  text-decoration: none;
+  ul {
+    text-decoration: none;
+
+  }
+  li {
+    list-style: none;
+    display: inline;
+    padding: 0px;
+  }
+}

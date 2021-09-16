@@ -10,12 +10,22 @@ function ChatCard({ chat }) {
     history.push(`/chat/${chat.id}`)
   }
 
+  const isCurrentUser = () => {
+    if (isOwner(chat.matchedUsers[0].id)) {
+      return chat
+    } else if (isOwner(chat.matchedUsers[1].id)) {
+      return chat
+    }
+    return
+  }
+
   const isLoggedInUser = () => {
     if (isOwner(chat.matchedUsers[0].id)) {
       return chat.matchedUsers[1].username
     } else {
       return chat.matchedUsers[0].username
     }
+    
   }
 
   const matchedUserAvatar = () => {
@@ -36,15 +46,18 @@ function ChatCard({ chat }) {
   }
 
   return (
-    <ChatItem 
-      avatar={matchedUserAvatar()}
-      alt={chat.id}
-      title={isLoggedInUser()}
-      subtitle={textDisplay()}
-      date={new Date()}
-      unread={1}
-      onClick={handleClick}
-    />
+    <>
+      {isCurrentUser() &&
+        <ChatItem 
+          avatar={matchedUserAvatar()}
+          alt={chat.id}
+          title={isLoggedInUser()}
+          subtitle={textDisplay()}
+          date={new Date()}
+          unread={1}
+          onClick={handleClick}
+        />}  
+    </>
   )
 }
 
