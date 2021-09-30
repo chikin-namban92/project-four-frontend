@@ -18,7 +18,7 @@ function Footer() {
           </li>
           <li> | </li>
           <li>
-            <a href="https://github.com/chikin-namban92?tab=repositories" target="blank">
+            <a href="https://github.com/jguppy92?tab=repositories" target="blank">
               GitHub
             </a>
           </li>
