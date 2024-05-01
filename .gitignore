@@ -146,6 +146,8 @@ dist
 .env.development.local
 .env.test.local
 .env.production.local
+.vscode
+.netlify
 
 npm-debug.log*
 yarn-debug.log*
