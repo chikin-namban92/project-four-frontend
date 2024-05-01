@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.cce4a5d5.chunk.css",
-    "main.js": "/static/js/main.656a50d0.chunk.js",
-    "main.js.map": "/static/js/main.656a50d0.chunk.js.map",
+    "main.css": "/static/css/main.4714dfbb.chunk.css",
+    "main.js": "/static/js/main.ed03ff6f.chunk.js",
+    "main.js.map": "/static/js/main.ed03ff6f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.54cf774c.js",
     "runtime-main.js.map": "/static/js/runtime-main.54cf774c.js.map",
     "static/css/2.119b81bb.chunk.css": "/static/css/2.119b81bb.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.2c129865.chunk.js.map": "/static/js/2.2c129865.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.119b81bb.chunk.css.map": "/static/css/2.119b81bb.chunk.css.map",
-    "static/css/main.cce4a5d5.chunk.css.map": "/static/css/main.cce4a5d5.chunk.css.map",
+    "static/css/main.4714dfbb.chunk.css.map": "/static/css/main.4714dfbb.chunk.css.map",
     "static/js/2.2c129865.chunk.js.LICENSE.txt": "/static/js/2.2c129865.chunk.js.LICENSE.txt",
     "static/media/hero_caracal_four.3bb5e0e6.jpg": "/static/media/hero_caracal_four.3bb5e0e6.jpg",
     "static/media/hero_caracal_one.96ea3363.jpg": "/static/media/hero_caracal_one.96ea3363.jpg",
@@ -21,7 +21,7 @@
     "static/js/runtime-main.54cf774c.js",
     "static/css/2.119b81bb.chunk.css",
     "static/js/2.2c129865.chunk.js",
-    "static/css/main.cce4a5d5.chunk.css",
-    "static/js/main.656a50d0.chunk.js"
+    "static/css/main.4714dfbb.chunk.css",
+    "static/js/main.ed03ff6f.chunk.js"
   ]
 }
