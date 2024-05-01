@@ -75,7 +75,7 @@ function ChatShow() {
   return (
     <>
       <section className="section has-scroll">
-        <div className="container">
+        <div className="container messages">
           {isError && <Error />}
           {isLoading && <Loading />}
           {messages && messages.map(message => (
@@ -104,7 +104,7 @@ function ChatShow() {
                   />
                 </div>
                 <div className="field">
-                  <button type="submit" className="button is-danger is-fullwidth">
+                  <button type="submit" className="button is-danger is-fullwidth chat-button">
                     Send Message
                   </button>
                 </div>
